@@ -102,6 +102,8 @@ Output_Area.place(x=50, y=100, width=280, height=30)
 Calculate = Button(window,text="Calc", command=Calc)
 Calculate.place(x=230, y=150, width=100, height=40)
 
+window.bind("<Return>", lambda event: Calc())
+
 Create_Num_Buttons()
 Create_Oprs_Buttons()
 window.mainloop()

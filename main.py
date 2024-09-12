@@ -17,11 +17,11 @@ Window_Size = "400x400"
 Window_Title = "Calculator"
 
 # Functions
-def validate_only_digits(P, d):
-    return P.isdigit() or P == ''
+def validate_only_digits(Key):
+    return Key.isdigit() or Key == ''
 
-def validate_only_opers(P, d):
-    return True if P in ['+','-','/','*',''] else False
+def validate_only_opers(Key):
+    return True if Key in ['+','-','/','*',''] else False
 
 def Calc():
     Output_Area.config(state=NORMAL)
@@ -82,15 +82,15 @@ window.geometry(Window_Size)
 window.title(Window_Title)
 window.resizable(False, False)
 
-Input_Area_1 = Entry(window, validate='key', validatecommand=(window.register(validate_only_digits), '%P', '%d'))
+Input_Area_1 = Entry(window, validate='key', validatecommand=(window.register(validate_only_digits), '%P'))
 Input_Area_1.insert(END, "0")
 Input_Area_1.place(x=50, y=50,width=100, height=30)
 
-Input_Area_0 = Entry(window, validate='key', validatecommand=(window.register(validate_only_opers), '%P', '%d'))
+Input_Area_0 = Entry(window, validate='key', validatecommand=(window.register(validate_only_opers), '%P'))
 Input_Area_0.insert(END, "+")
 Input_Area_0.place(x=170, y=50, width=30, height=30)
 
-Input_Area_2 = Entry(window, validate='key', validatecommand=(window.register(validate_only_digits), '%P', '%d'))
+Input_Area_2 = Entry(window, validate='key', validatecommand=(window.register(validate_only_digits), '%P'))
 Input_Area_2.insert(END, "0")
 Input_Area_2.place(x=220, y=50,width=100, height=30)
 

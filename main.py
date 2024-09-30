@@ -1,10 +1,6 @@
 #Import Section
-from sys import path
-path.insert(0,"./module/")
-
-import calc
+import module.calc  as calc
 from tkinter import *
-from functools import partial
 
 #Variables
 Dictionary = {"+":calc.Add,"-":calc.Diff,"*":calc.Product,"/":calc.Div}
